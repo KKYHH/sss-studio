@@ -620,6 +620,50 @@ section {
   z-index: 100;
 }
 
+/* contact */
+
+.contact {
+  margin: 0;
+}
+
+.contact .inner {
+  background: rgb(187, 88, 88);
+  position: relative;
+  padding: 140px 50px;
+  box-sizing: border-box;
+}
+
+.contact .inner .box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contact .inner .mainText {
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.contact .inner .mainText h2 {
+  font-weight: normal;
+  letter-spacing: -1px;
+  line-height: 0.9;
+  font-size: 120px;
+  margin-right: 50px;
+}
+
+.contact .inner .box .subTextBox {
+  grid-column-start: 2;
+}
+
+.contact .inner .box .subTextBox .add {
+  margin-top: 20px;
+  font-size: 35px;
+}
+
+.contact .inner .box .subTextBox p span {
+  font-weight: bold;
+}
+
 /* footer */
 footer {
   position: relative;
