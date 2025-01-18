@@ -103,7 +103,7 @@ gsap.utils.toArray('.con3 .listBox li').forEach((selector, t) => {
           delay: t % 3 * .05
         })
     },
-    markers: true
+    // markers: true
   })
 })
 
@@ -141,4 +141,17 @@ gsap.timeline({
     toggleClass: { targets: '.wrap', className: 'on' }
   }
 })
+
+// footer
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: 'footer',
+    start: '0% 100%',
+    end: '100% 0%',
+    scrub: 1,
+    markers: true
+  }
+})
+  .to('.logoWrap', { top: '10%', ease: 'none', duration: 5 }, 0)
 // }
