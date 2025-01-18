@@ -116,7 +116,7 @@ let img = document.querySelector('.con5 .imgBox img')
 for (let i = 0; i < listBox.length; i++) {
 
   listBox[i].addEventListener('mouseover', () => {
-    img.src = `./images/img${i}.jpg`;
+    img.src = `./images/sss_box.png`;
     gsap.set(imgBox, { scale: 0, opacity: 0, duration: .3 }),
       gsap.to(imgBox, { scale: 1, opacity: 1, duration: .5 })
   })
