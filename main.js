@@ -77,9 +77,33 @@ gsap.utils.toArray('.con4 .listBox .box').forEach((selector) => {
       start: '0% 20%',
       end: '0% 0%',
       scrub: 1,
-      markers: true
+      // markers: true
     }
   })
     .to(selector, { transform: 'rotateX(-10deg) scale(0.9)', transformOrigin: 'top', filter: 'brightness(0.3)' }, 0)
+})
+
+// .con3 listBox 카드
+
+gsap.utils.toArray('.con3 .listBox li').forEach((selector, t) => {
+  // create()는 ScrollTrigger가 대문자
+  ScrollTrigger.create({
+    trigger: selector,
+    start: '-125% 50%',
+    onEnter: () => {
+      gsap.set(selector, {
+        rotationX: '-65deg',
+        z: '-500px',
+        opacity: 0
+      }),
+        gsap.to(selector, {
+          rotationX: 0,
+          z: 0,
+          opacity: 1,
+          delay: t % 3 * .05
+        })
+    },
+    markers: true
+  })
 })
 // }
