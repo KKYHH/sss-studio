@@ -68,4 +68,18 @@ for (let i = 0; i < textAniList.length; i++) {
 }
 
 textAni.play();
+
+// .con4 listBox
+gsap.utils.toArray('.con4 .listBox .box').forEach((selector) => {
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: selector,
+      start: '0% 20%',
+      end: '0% 0%',
+      scrub: 1,
+      markers: true
+    }
+  })
+    .to(selector, { transform: 'rotateX(-10deg) scale(0.9)', transformOrigin: 'top', filter: 'brightness(0.3)' }, 0)
+})
 // }
