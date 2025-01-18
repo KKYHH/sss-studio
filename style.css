@@ -679,6 +679,7 @@ footer .inner {
   height: 100vh;
   padding: 75px 75px 25px;
   box-sizing: border-box;
+  position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -687,7 +688,7 @@ footer .inner {
 footer .inner .box {
   padding: 50px 0 0;
   background: rgba(55, 55, 55, 0.4);
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(50px);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
