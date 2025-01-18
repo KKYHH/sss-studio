@@ -117,29 +117,39 @@ for (let i = 0; i < listBox.length; i++) {
 
   listBox[i].addEventListener('mouseover', () => {
     img.src = `./images/sss_box.png`;
+
+    gsap.killTweensOf(imgBox);
     gsap.set(imgBox, { scale: 0, opacity: 0, duration: .3 }),
       gsap.to(imgBox, { scale: 1, opacity: 1, duration: .5 })
+
   })
 
   listBox[i].addEventListener('mousemove', (e) => {
+
     let imgBoxX = e.pageX + 20;
     let imgBoxY = e.pageY - 20;
     imgBox.style.left = imgBoxX + 'px';
     imgBox.style.top = imgBoxY + 'px';
+
   })
 
-  listBox[i].addEventListener('mouseout', () => {
+  listBox[i].addEventListener('mouseleave', () => {
+
+    gsap.killTweensOf(imgBox);
     gsap.to(imgBox, { scale: 0, opacity: 0, duration: .2 })
+
   })
 }
 
 gsap.timeline({
+
   scrollTrigger: {
     trigger: '.con5',
     start: '0% 100%',
     end: '100% 0%',
     toggleClass: { targets: '.wrap', className: 'on' }
   }
+
 })
 
 // footer
