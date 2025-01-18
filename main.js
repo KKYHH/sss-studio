@@ -160,7 +160,7 @@ gsap.timeline({
     start: '0% 100%',
     end: '100% 0%',
     scrub: 1,
-    markers: true
+    // markers: true
   }
 })
   .to('.logoWrap', { top: '10%', ease: 'none', duration: 5 }, 0)
