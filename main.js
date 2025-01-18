@@ -42,4 +42,19 @@ gsap.utils.toArray('.mainTextBox .title i').forEach((selector) => {
   })
     .fromTo(selector, { overflow: 'hidden', y: 150 }, { y: 0, ease: 'none', duration: 5 }, 0)
 })
+
+// .subText p
+
+gsap.utils.toArray('.subText p').forEach((selector) => {
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: selector,
+      start: '100% 100%',
+      end: '100% 100%',
+      scrub: 1,
+      markers: true
+    }
+  })
+    .fromTo(selector, { opacity: 0, y: 100 }, { opacity: 1, y: 0, ease: 'none', duration: 5 }, 0)
+})
 // }
