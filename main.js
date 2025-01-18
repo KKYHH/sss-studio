@@ -20,12 +20,12 @@ gsap.timeline({
     // markers: true
   }
 })
-  .to('.logoWrap #S1', { x: -150, y: 250, rotate: 20, ease: 'none', duration: 5 }, 0) // 0 값이 없으면 .to 순차 재생
-  .to('.logoWrap #S2', { x: -60, y: 450, rotate: 30, ease: 'none', duration: 5 }, 0)
+  .to('.logoWrap #S1', { x: -150, y: 250, rotate: 30, ease: 'none', duration: 5 }, 0) // 0 값이 없으면 .to 순차 재생
+  .to('.logoWrap #S2', { x: -60, y: 450, rotate: 20, ease: 'none', duration: 5 }, 0)
   .to('.logoWrap #S3', { x: -0, y: 500, rotate: -10, ease: 'none', duration: 5 }, 0)
   .to('.logoWrap #S4', { x: 50, y: 300, rotate: 10, ease: 'none', duration: 5 }, 0)
   .to('.logoWrap #S5', { x: 100, y: 100, rotate: -10, ease: 'none', duration: 5 }, 0)
-  .to('.logoWrap #S6', { x: 50, y: 450, rotate: 20, ease: 'none', duration: 5 }, 0)
+  .to('.logoWrap #S6', { x: -10, y: 450, rotate: -10, ease: 'none', duration: 5 }, 0)
 
 
 // .mainTextBox .title
@@ -105,5 +105,40 @@ gsap.utils.toArray('.con3 .listBox li').forEach((selector, t) => {
     },
     markers: true
   })
+})
+
+// .con5 list Box hover되면 이미지 보여주기
+
+let listBox = document.querySelectorAll('.con5 .listBox li');
+let imgBox = document.querySelector('.con5 .imgBox')
+let img = document.querySelector('.con5 .imgBox img')
+
+for (let i = 0; i < listBox.length; i++) {
+
+  listBox[i].addEventListener('mouseover', () => {
+    img.src = `./images/img${i}.jpg`;
+    gsap.set(imgBox, { scale: 0, opacity: 0, duration: .3 }),
+      gsap.to(imgBox, { scale: 1, opacity: 1, duration: .5 })
+  })
+
+  listBox[i].addEventListener('mousemove', (e) => {
+    let imgBoxX = e.pageX + 20;
+    let imgBoxY = e.pageY - 20;
+    imgBox.style.left = imgBoxX + 'px';
+    imgBox.style.top = imgBoxY + 'px';
+  })
+
+  listBox[i].addEventListener('mouseout', () => {
+    gsap.to(imgBox, { scale: 0, opacity: 0, duration: .2 })
+  })
+}
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '.con5',
+    start: '0% 100%',
+    end: '100% 0%',
+    toggleClass: { targets: '.wrap', className: 'on' }
+  }
 })
 // }

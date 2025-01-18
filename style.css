@@ -620,6 +620,11 @@ section {
   z-index: 100;
 }
 
+/* imgBox 컨텐츠의 가로스크롤을 방지하기 위함 */
+.wrap.on {
+  overflow: hidden;
+}
+
 /* contact */
 
 .contact {
