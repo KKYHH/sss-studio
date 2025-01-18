@@ -17,7 +17,7 @@ gsap.timeline({
     start: '100% 100%',
     end: '100% 0%',
     scrub: 1, // scrub이 없으면 start 시점에 자동으로 애니메이션 재생, 설정하면 값만큼 스크롤 따라 애니메이션 재생 1,2,3 or true
-    markers: true
+    // markers: true
   }
 })
   .to('.logoWrap #S1', { x: -150, y: 250, rotate: 20, ease: 'none', duration: 5 }, 0) // 0 값이 없으면 .to 순차 재생
@@ -37,7 +37,7 @@ gsap.utils.toArray('.mainTextBox .title i').forEach((selector) => {
       start: '100% 100%',
       end: '100% 100%',
       scrub: 1,
-      markers: true
+      // markers: true
     }
   })
     .fromTo(selector, { overflow: 'hidden', y: 150 }, { y: 0, ease: 'none', duration: 5 }, 0)
@@ -52,9 +52,20 @@ gsap.utils.toArray('.subText p').forEach((selector) => {
       start: '100% 100%',
       end: '100% 100%',
       scrub: 1,
-      markers: true
+      // markers: true
     }
   })
     .fromTo(selector, { opacity: 0, y: 100 }, { opacity: 1, y: 0, ease: 'none', duration: 5 }, 0)
 })
+
+// .con1 textAni
+
+let textAniList = document.querySelectorAll('.con1 .textAni li');
+let textAni = gsap.timeline({ repeat: -1 });
+
+for (let i = 0; i < textAniList.length; i++) {
+  textAni.to(textAniList[i], 0.8, { opacity: 1, repeat: 1, delay: 0, x: 0, yoyo: true, ease: 'power4.out' })
+}
+
+textAni.play();
 // }
