@@ -829,10 +829,10 @@ footer .logoWrap span img {
 }
 @keyframes up {
   0% {
-    transform: translateY(50px);
+    transform: translateY(80px);
   }
   30% {
-    transform: translateY(50px);
+    transform: translateY(80px);
   }
   100% {
     transform: translateY(0px);
